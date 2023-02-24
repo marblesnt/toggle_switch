@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Switch from './components/Switch.js'
+import { useState } from 'react';
 
 function App() {
+
+  const [isToggled, setIsToggle] = useState(false)
+
+  const tgleSwt = () =>{
+    setIsToggle(!isToggled)
+    console.log(isToggled)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Switch 
+    isToggle={isToggled} 
+    onToggle={tgleSwt}/>
+    </>
   );
 }
 
